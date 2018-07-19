@@ -76,14 +76,3 @@ dico = {
 }
 
 sol = pylbm.Simulation(dico)
-"""while sol.t < Tf:
-    print sol.t
-    sol.one_time_step()
-
-viewer = pylbm.viewer.matplotlibViewer
-fig = viewer.Fig()
-ax = fig[0]
-im = ax.image(vorticity(sol).transpose(), clim = [-3., 0])
-ax.ellipse([.3/dx, 0.5*(ymin+ymax)/dx], [rayon/dx,rayon/dx], 'r')
-ax.title = 'Von Karman vortex street at t = {0:f}'.format(sol.t)
-fig.show()"""
