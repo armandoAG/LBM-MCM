@@ -8,20 +8,9 @@ def my_range(start, end, step):
         yield start
         start += step
 
-#for i in my_range(0, .5, .1):
- #   sol.one_time_step()
-
-#prueba agregar elipse
-"""def __init__(self, parent):
-    self.ax = parent
-def ellipse(self, pos, radius, color, angle=0.):
-        return self.ax.add_patch(Ellipse(xy = pos, width = 2*radius[0], height = 2*radius[1], angle=angle*180/np.pi, fill=True, color=color))"""
-
-
 ims = []
 
 fig = plt.figure()
-#ax.ellipse([.3/dx, .5*(ymin+ymax)/dx], [rayon/dx, rayon/dx], 'r')
 
 #para comprobar que entre el while y los for hay la misma cantidad de while iterados
 while1 = []
@@ -46,6 +35,7 @@ for i in my_range(0, 300, 1):
     count2 += 1
     #plt.title('Von Karman vortex street at %d' %(sol.t))
 
+#Para una sola imagen
 '''while sol.t < Tf:
     sol.one_time_step()
 im = plt.imshow(vorticity(sol).transpose(), cmap = 'cubehelix')
@@ -57,8 +47,8 @@ plt.title('Von Karman vortex street at t = %d' %(sol.t))
 #print count1
 #print count2
 #print while1
-print sol._F[0]
-print sol._Fold[0]
+
+#Otra manera de generar el movimiento, desde pylbm
 """viewer = pylbm.viewer.matplotlibViewer
 fig = viewer.Fig()
 ax = fig[0]
@@ -77,5 +67,8 @@ def update(iframe):
 #fig.show()
 
 ani = animation.ArtistAnimation(fig, ims, interval=1, repeat=False)
+
+#imprime la funcion de distribucion
+print sol._F[0]
 
 plt.show()
